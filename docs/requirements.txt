@@ -1,0 +1,16 @@
+# use fixed versions
+#
+# fix docutils to a version working for all
+docutils >=0.14,<0.18
+
+# sphinx 5.3.0 requires Jinja2 >=3.0 and docutils >=0.14,<0.20
+sphinx >=5.0.0,<6
+
+# sphinx-rtd-theme >=1.0.0 would require docutils <0.18
+sphinx-rtd-theme >=1.0.0,<2
+
+# replaces outdated and no longer maintained m2rr
+myst-parser >= 0.18.1,<1
+
+# mock imports of "micropython"
+mock >=4.0.3,<5
