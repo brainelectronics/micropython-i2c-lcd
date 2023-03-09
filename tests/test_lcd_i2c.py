@@ -4,7 +4,7 @@
 """Unittest for MicroPython I2C LCD"""
 
 import logging
-from mock import Mock, patch
+from unittest.mock import Mock, patch
 from nose2.tools import params
 import sys
 import unittest
