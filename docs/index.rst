@@ -1,5 +1,5 @@
-MicroPython package template
-===================================
+Micropython package to control HD44780 LCD displays via I2C
+===========================================================
 
 Contents
 --------
@@ -11,7 +11,7 @@ Contents
    EXAMPLES
    DOCUMENTATION
    CONTRIBUTING
-   be_upy_blink
+   lcd_i2c
    changelog_link
 
 Indices and tables

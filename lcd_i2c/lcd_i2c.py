@@ -295,6 +295,27 @@ class LCD:
         """
         self.no_cursor()
 
+    def set_cursor(self, col: int, row: int) -> None:
+        """
+        Set the cursor
+
+        :param      col:  The new column of the cursor
+        :type       col:  int
+        :param      row:  The new row of the cursor
+        :type       row:  int
+        """
+        row_offsets: List[int] = [0x00, 0x40, 0x14, 0x54]
+
+        # we count rows starting w/0
+        if row > (self.rows - 1):
+            row = self.rows - 1
+
+        self._command(
+            value=(Const.LCD_SETDDRAMADDR | (col + row_offsets[row]))
+        )
+
+        self._cursor_position = (col, row)   # (x, y)
+
     def scroll_display_left(self) -> None:
         """Scroll the display to the left by one"""
         self._command(value=(Const.LCD_CURSORSHIFT | Const.LCD_DISPLAYMOVE | Const.LCD_MOVELEFT))   # noqa: E501
@@ -371,27 +392,6 @@ class LCD:
         for x in range(0, 8):
             self._command(value=charmap[x], mode=Const.RS)
             sleep_us(40)
-
-    def set_cursor(self, col: int, row: int) -> None:
-        """
-        Set the cursor
-
-        :param      col:  The new column of the cursor
-        :type       col:  int
-        :param      row:  The new row of the cursor
-        :type       row:  int
-        """
-        row_offsets: List[int] = [0x00, 0x40, 0x14, 0x54]
-
-        # we count rows starting w/0
-        if row > (self.rows - 1):
-            row = self.rows - 1
-
-        self._command(
-            value=(Const.LCD_SETDDRAMADDR | (col + row_offsets[row]))
-        )
-
-        self._cursor_position = (col, row)   # (x, y)
 
     def print(self, text: str) -> None:
         """
