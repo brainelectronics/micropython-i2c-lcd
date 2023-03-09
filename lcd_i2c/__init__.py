@@ -3,4 +3,4 @@
 
 from .version import __version__
 
-from .blink import flash_led
+from .lcd_i2c import LCD
