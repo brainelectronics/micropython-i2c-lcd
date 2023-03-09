@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-from micropython import const
+try:
+    from micropython import const
+except ImportError:
+    def const(x):
+        return x
 
 # commands
 #: Clear display command
