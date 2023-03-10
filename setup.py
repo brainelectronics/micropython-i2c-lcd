@@ -11,15 +11,15 @@ here = Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 # load elements of version.py
-exec(open(here / 'be_upy_blink' / 'version.py').read())
+exec(open(here / 'lcd_i2c' / 'version.py').read())
 
 setup(
-    name='micropython-package-template',
+    name='micropython-i2c-lcd',
     version=__version__,
-    description="MicroPython PyPi package template project with auto deploy",
+    description="Micropython package to control HD44780 LCD displays 1602 and 2004 ",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/brainelectronics/micropython-package-template',
+    url='https://github.com/brainelectronics/micropython-i2c-lcd',
     author='brainelectronics',
     author_email='info@brainelectronics.de',
     classifiers=[
@@ -27,13 +27,13 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
     ],
-    keywords='micropython, template',
+    keywords='micropython, HD44780, I2C, display, LCD1602, LCD2004',
     project_urls={
-        'Bug Reports': 'https://github.com/brainelectronics/micropython-package-template/issues',
-        'Source': 'https://github.com/brainelectronics/micropython-package-template',
+        'Bug Reports': 'https://github.com/brainelectronics/micropython-i2c-lcd/issues',
+        'Source': 'https://github.com/brainelectronics/micropython-i2c-lcd',
     },
     license='MIT',
     cmdclass={'sdist': sdist_upip.sdist},
-    packages=['be_upy_blink'],
+    packages=['lcd_i2c'],
     install_requires=[]
 )

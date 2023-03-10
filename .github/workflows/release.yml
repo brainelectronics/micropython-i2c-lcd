@@ -30,7 +30,7 @@ jobs:
         run: |
           changelog2version \
             --changelog_file changelog.md \
-            --version_file be_upy_blink/version.py \
+            --version_file lcd_i2c/version.py \
             --version_file_type py \
             --debug
           python setup.py sdist

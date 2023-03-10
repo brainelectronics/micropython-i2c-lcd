@@ -27,7 +27,7 @@ jobs:
         run: |
           changelog2version \
             --changelog_file changelog.md \
-            --version_file be_upy_blink/version.py \
+            --version_file lcd_i2c/version.py \
             --version_file_type py \
             --additional_version_info="-rc${{ github.run_number }}.dev${{ github.event.number }}" \
             --debug

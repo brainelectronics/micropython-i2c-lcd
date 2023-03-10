@@ -14,23 +14,31 @@ sys.path.insert(0, os.path.abspath('../'))
 here = Path(__file__).parent.resolve()
 
 try:
-    import be_upy_blink
-except ImportError:
-    raise SystemExit("be_upy_blink has to be importable")
-else:
     # Inject mock modules so that we can build the
     # documentation without having the real stuff available
     from mock import Mock
 
-    sys.modules['micropython'] = Mock()
-    print("Mocked 'micropython' module")
+    to_be_mocked = [
+        'micropython',
+        'machine',
+        'time.sleep_ms', 'time.sleep_us',
+    ]
+    for module in to_be_mocked:
+        sys.modules[module] = Mock()
+        print("Mocked '{}' module".format(module))
+
+    from lcd_i2c import LCD
+except ImportError:
+    raise SystemExit("lcd_i2c has to be importable")
+else:
+    pass
 
 # load elements of version.py
-exec(open(here / '..' / 'be_upy_blink' / 'version.py').read())
+exec(open(here / '..' / 'lcd_i2c' / 'version.py').read())
 
 # -- Project information
 
-project = 'micropython-package-template'
+project = 'micropython-i2c-lcd'
 copyright = '2023, brainelectronics'
 author = 'brainelectronics'
 
@@ -72,10 +80,12 @@ suppress_warnings = [
 # A list of regular expressions that match URIs that should not be checked
 # when doing a linkcheck build.
 linkcheck_ignore = [
-    # tag 0.4.0 did not exist during docs introduction
-    'https://github.com/brainelectronics/micropython-package-template/tree/0.4.0',
+    # tag 0.1.0 did not exist during docs introduction
+    'https://github.com/brainelectronics/micropython-i2c-lcd/tree/0.1.0',
     # RTD page did not exist during docs introduction
-    'https://micropython-package-template.readthedocs.io/en/latest/',
+    'https://micropython-i2c-lcd.readthedocs.io/en/latest/',
+    # examples folder did not exist during docs introduction
+    'https://github.com/brainelectronics/micropython-i2c-lcd/tree/develop/examples',
 ]
 
 templates_path = ['_templates']
