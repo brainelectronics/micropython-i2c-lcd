@@ -45,7 +45,6 @@ exclude =
     libs_external
     sdist_upip.py
     setup.py
-    update_version.py
 
 # Provide a comma-separated list of glob patterns to add to the list of excluded ones.
 # extend-exclude =

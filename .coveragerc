@@ -10,11 +10,13 @@ omit =
     .tox/*,
     build/*,
     dist/*,
-    version.py
+    version.py,
+    lcd_i2c/const.py,
+    lcd_i2c/typing.py,
 
 [report]
 # include = src/*
-include = be_upy_blink/*
+include = lcd_i2c/*
 # Regexes for lines to exclude from consideration
 
 ignore_errors = True

@@ -1,0 +1,27 @@
+{
+    "urls": [
+        [
+            "lcd_i2c/__init__.py",
+            "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/__init__.py"
+        ],
+        [
+            "lcd_i2c/const.py",
+            "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/const.py"
+        ],
+        [
+            "lcd_i2c/lcd_i2c.py",
+            "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/lcd_i2c.py"
+        ],
+        [
+            "lcd_i2c/typing.py",
+            "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/typing.py"
+        ],
+        [
+            "lcd_i2c/version.py",
+            "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/version.py"
+        ]
+    ],
+    "deps": [
+    ],
+    "version": "0.1.0"
+}
