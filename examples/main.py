@@ -49,14 +49,14 @@ lcd.no_backlight()
 print_and_wait("Turn LCD backlight off")
 
 # get current backlight value
-print_and_wait("Backlight value: {}".format(lcd.get_backlight()))
+print("Backlight value: {}".format(lcd.get_backlight()))
 
 # turn LCD on
 lcd.backlight()
 print_and_wait("Turn LCD backlight on")
 
 # get current backlight value
-print_and_wait("Backlight value: {}".format(lcd.get_backlight()))
+print("Backlight value: {}".format(lcd.get_backlight()))
 
 # clear LCD display content
 lcd.clear()

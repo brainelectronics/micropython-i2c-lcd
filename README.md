@@ -74,6 +74,13 @@ station.isconnected()
 Install the latest package version of this lib on the MicroPython device
 
 ```python
+import mip
+mip.install("github:brainelectronics/micropython-i2c-lcd")
+```
+
+For MicroPython versions below 1.19.1 use the `upip` package instead of `mip`
+
+```python
 import upip
 upip.install('micropython-i2c-lcd')
 ```
@@ -81,6 +88,16 @@ upip.install('micropython-i2c-lcd')
 #### Specific version
 
 Install a specific, fixed package version of this lib on the MicroPython device
+
+```python
+import mip
+# install a verions of a specific branch
+mip.install("github:brainelectronics/micropython-i2c-lcd", version="feature/initial-implementation")
+# install a tag version
+mip.install("github:brainelectronics/micropython-i2c-lcd", version="0.1.0")
+```
+
+For MicroPython versions below 1.19.1 use the `upip` package instead of `mip`
 
 ```python
 import upip
@@ -95,10 +112,17 @@ MicroPython device. If no specific version is set, the latest stable version
 will be used.
 
 ```python
+import mip
+mip.install("github:brainelectronics/micropython-i2c-lcd", version="0.1.0-rc3.dev1")
+```
+
+For MicroPython versions below 1.19.1 use the `upip` package instead of `mip`
+
+```python
 import upip
 # overwrite index_urls to only take artifacts from test.pypi.org
 upip.index_urls = ['https://test.pypi.org/pypi']
-upip.install('micropython-i2c-lcd==0.1.0rc1.dev2')
+upip.install('micropython-i2c-lcd==0.1.0rc3.dev1')
 ```
 
 ### Manually
