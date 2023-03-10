@@ -108,13 +108,15 @@ print_and_wait("Scroll display to the right")
 
 # set text flow right to left
 lcd.clear()
+lcd.set_cursor(col=12, row=0)
 lcd.right_to_left()
 lcd.print("Right to left")
 print_and_wait("Set text flow right to left")
 
 # set text flow left to right
-lcd.left_to_right()
 lcd.clear()
+lcd.set_cursor(col=0, row=0)
+lcd.left_to_right()
 lcd.print("Left to right")
 print_and_wait("Set text flow left to right")
 

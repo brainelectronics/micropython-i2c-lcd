@@ -83,10 +83,12 @@ for _ in text:
 # LCD has already been setup, see section "Setup Display"
 
 # set text flow right to left
+lcd.set_cursor(col=12, row=0)
 lcd.right_to_left()
 lcd.print("Right to left")
 
 # set text flow left to right
+lcd.set_cursor(col=0, row=0)
 lcd.left_to_right()
 lcd.print("Left to right")
 ```
