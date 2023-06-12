@@ -16,7 +16,7 @@ exec(open(here / 'lcd_i2c' / 'version.py').read())
 setup(
     name='micropython-i2c-lcd',
     version=__version__,
-    description="Micropython package to control HD44780 LCD displays 1602 and 2004 ",
+    description="MicroPython package to control HD44780 LCD displays 1602 and 2004",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/brainelectronics/micropython-i2c-lcd',
@@ -26,8 +26,9 @@ setup(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: Implementation :: MicroPython',
     ],
-    keywords='micropython, HD44780, I2C, display, LCD1602, LCD2004',
+    keywords='micropython, HD44780, I2C, display, LCD1602, LCD2004, PCF8574',
     project_urls={
         'Bug Reports': 'https://github.com/brainelectronics/micropython-i2c-lcd/issues',
         'Source': 'https://github.com/brainelectronics/micropython-i2c-lcd',

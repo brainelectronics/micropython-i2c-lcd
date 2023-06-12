@@ -1,4 +1,4 @@
-Micropython package to control HD44780 LCD displays via I2C
+MicroPython package to control HD44780 LCD displays via I2C
 ===========================================================
 
 Contents
