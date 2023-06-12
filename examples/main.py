@@ -7,7 +7,8 @@ from lcd_i2c import LCD
 from machine import I2C, Pin
 from time import sleep
 
-I2C_ADDR = 0x27
+# PCF8574 on 0x27
+I2C_ADDR = 0x27     # DEC 39, HEX 0x27
 I2C_NUM_ROWS = 2
 I2C_NUM_COLS = 16
 FREQ = 800000   # Try lowering this value in case of "Errno 5"
@@ -28,7 +29,8 @@ def print_and_wait(text: str, sleep_time: int = 2) -> None:
 
 # define custom I2C interface, default is 'I2C(0)'
 # check the docs of your device for further details and pin infos
-i2c = I2C(1, scl=Pin(3), sda=Pin(2), freq=FREQ)
+# this are the pins for the Raspberry Pi Pico adapter board
+i2c = I2C(0, scl=Pin(13), sda=Pin(12), freq=FREQ)
 lcd = LCD(addr=I2C_ADDR, cols=I2C_NUM_COLS, rows=I2C_NUM_ROWS, i2c=i2c)
 
 # get LCD infos/properties
@@ -154,5 +156,6 @@ lcd.create_char(
 print_and_wait("Create custom char ':-)'")
 
 # show custom char stored at location 0
+lcd.print(chr(0))
 lcd.print(chr(0))
 print_and_wait("Show custom char")

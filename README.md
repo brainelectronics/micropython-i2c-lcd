@@ -7,13 +7,13 @@
 [![codecov](https://codecov.io/github/brainelectronics/micropython-i2c-lcd/branch/main/graph/badge.svg)](https://app.codecov.io/github/brainelectronics/micropython-i2c-lcd)
 [![CI](https://github.com/brainelectronics/micropython-i2c-lcd/actions/workflows/release.yml/badge.svg)](https://github.com/brainelectronics/micropython-i2c-lcd/actions/workflows/release.yml)
 
-Micropython package to control HD44780 LCD displays 1602 and 2004 via I2C
+MicroPython package to control HD44780 LCD displays 1602 and 2004 via I2C
 
 ---------------
 
 ## General
 
-Micropython package to control HD44780 LCD displays 1602 and 2004 via I2C
+MicroPython package to control HD44780 LCD displays 1602 and 2004 via I2C
 
 📚 The latest documentation is available at
 [MicroPython I2C LCD ReadTheDocs][ref-rtd-micropython-i2c-lcd] 📚
@@ -65,6 +65,7 @@ Connect the MicroPython device to a network (if possible)
 ```python
 import network
 station = network.WLAN(network.STA_IF)
+station.active(True)
 station.connect('SSID', 'PASSWORD')
 station.isconnected()
 ```
@@ -158,13 +159,14 @@ cp examples/boot.py /pyboard
 from lcd_i2c import LCD
 from machine import I2C, Pin
 
-I2C_ADDR = 0x27
+# PCF8574 on 0x50
+I2C_ADDR = 0x27     # DEC 39, HEX 0x27
 NUM_ROWS = 2
 NUM_COLS = 16
 
 # define custom I2C interface, default is 'I2C(0)'
 # check the docs of your device for further details and pin infos
-i2c = I2C(1, scl=Pin(3), sda=Pin(2), freq=800_000)
+i2c = I2C(0, scl=Pin(13), sda=Pin(12), freq=800000)
 lcd = LCD(addr=I2C_ADDR, cols=NUM_COLS, rows=NUM_ROWS, i2c=i2c)
 
 lcd.begin()
