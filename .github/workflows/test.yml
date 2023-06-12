@@ -52,3 +52,11 @@ jobs:
       - name: Test built package
         run: |
           twine check dist/*
+      - name: Validate mip package file
+        run: |
+          upy-package \
+            --setup_file setup.py \
+            --package_changelog_file changelog.md \
+            --package_file package.json \
+            --validate \
+            --ignore-version

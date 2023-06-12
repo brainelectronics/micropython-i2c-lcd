@@ -21,7 +21,6 @@
             "github:brainelectronics/micropython-i2c-lcd/lcd_i2c/version.py"
         ]
     ],
-    "deps": [
-    ],
+    "deps": [],
     "version": "0.1.0"
 }
