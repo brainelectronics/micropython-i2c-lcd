@@ -393,6 +393,8 @@ class LCD:
             self._command(value=charmap[x], mode=Const.RS)
             sleep_us(40)
 
+        self.set_cursor(*self.cursor_position)
+
     def print(self, text: str) -> None:
         """
         Print text on LCD
